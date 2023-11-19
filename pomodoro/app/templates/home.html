@@ -8,10 +8,10 @@
 <body>
     <nav>
         <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/timer">Timer</a></li>
-            <li><a href="/stats">Stats</a></li>
-            <li><a href="/stats">Shop</a></li>
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="{% url 'timer' %}">Timer</a></li>
+            <li><a href="{% url 'stats' %}">Stats</a></li>
+            <li><a href="{% url 'shop' %}">Shop</a></li>
         </ul>
     </nav>
 
@@ -22,7 +22,7 @@
     </main>
 
     <footer>
-        <p>thanks for using. 2023 PomodoroAPP.</p>
+        <p>Thanks for using. 2023 PomodoroAPP.</p>
     </footer>
 </body>
 </html>
