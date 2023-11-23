@@ -3,10 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <title>PomodoroAPP</title>
-    {% load static %} <!-- Django static files tag -->
-    <link rel="stylesheet" href="{% static 'style.css' %}"> <!-- Correct static file path -->
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="icon" type="image/png" href="{% static 'images/tomato.png' %}">
 </head>
 <body>
+    <img src="{% static 'images/tomato.png' %}" alt="Logo" class="logo">
     <nav>
         <ul>
             <li><a href="{% url 'home' %}">Home</a></li>
@@ -18,11 +20,9 @@
 
     <main>
         <h1>SHOP</h1>
+        <p>money</p>
 
     </main>
 
-    <footer>
-        <p>Thanks for using. 2023 PomodoroAPP.</p>
-    </footer>
 </body>
 </html>

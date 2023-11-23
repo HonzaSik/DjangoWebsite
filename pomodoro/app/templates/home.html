@@ -3,9 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <title>PomodoroAPP</title>
-    <link rel="stylesheet" href="../static/style.css">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="icon" type="image/png" href="{% static 'images/tomato.png' %}">
 </head>
 <body>
+    <img src="{% static 'images/tomato.png' %}" alt="Logo" class="logo">
     <nav>
         <ul>
             <li><a href="{% url 'home' %}">Home</a></li>
@@ -19,6 +22,7 @@
         <h1>Welcome to PomodoroAPP</h1>
         <p>you can boost your productivity by using this website</p>
         <p>earn tomatoes and exchange them</p>
+        <button id="startButton">Learn more</button>
     </main>
 
     <footer>

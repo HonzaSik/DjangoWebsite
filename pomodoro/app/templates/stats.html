@@ -4,9 +4,12 @@
     <meta charset="UTF-8">
     <title>PomodoroAPP</title>
     {% load static %} <!-- Django static files tag -->
-    <link rel="stylesheet" href="{% static 'style.css' %}"> <!-- Correct static file path -->
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <script src="{% static 'js.js' %}"></script>
+    <link rel="icon" type="image/png" href="{% static 'images/tomato.png' %}">
 </head>
 <body>
+    <img src="{% static 'images/tomato.png' %}" alt="Logo" class="logo">
     <nav>
         <ul>
             <li><a href="{% url 'home' %}">Home</a></li>
@@ -18,15 +21,10 @@
 
     <main>
         <h1>Here are your stats.</h1>
-        <p>Total completed: {{ total_completed }}</p>
-        <p>Time focused: {{ time_focused }}</p>
-        <p>Time paused: {{ time_paused }}</p>
-        <p>Tomatoes: {{ tomatoes }}</p>
-        <p>Money: {{ money }}</p>
+        <p>Total completed: {{ counts }}</p>
+        <p>Tomatoes balance: {{ tomatoes }}</p>
+        <p>Money balance: {{ money }}</p>
     </main>
 
-    <footer>
-        <p>Thanks for using. 2023 PomodoroAPP.</p>
-    </footer>
 </body>
 </html>

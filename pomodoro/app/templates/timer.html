@@ -4,9 +4,11 @@
     <meta charset="UTF-8">
     <title>PomodoroAPP</title>
     {% load static %} <!-- Django static files tag -->
-    <link rel="stylesheet" href="{% static 'style.css' %}"> <!-- Correct static file path -->
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="icon" type="image/png" href="{% static 'images/tomato.png' %}">
 </head>
 <body>
+    <img src="{% static 'images/tomato.png' %}" alt="Logo" class="logo">
     <nav>
         <ul>
             <li><a href="{% url 'home' %}">Home</a></li>
@@ -17,11 +19,20 @@
     </nav>
 
     <main>
-        <h1>TIMER</h1>
+        <h2 id="text">Pomodoro Timer</h2>
+    <div id="timer">25:00</div>
+    <div class="loadBar_container">
+        TIMER
+        <div class="loadBar_bg"><div class="loadBar_fg"></div></div>
+    </div>
+    <button id="startButton">Start</button>
+    <button id="pauseButton">Pause</button>
+    <button id="endButton">End</button>
     </main>
 
-    <footer>
-        <p>Thanks for using. 2023 PomodoroAPP.</p>
-    </footer>
+    <audio id="cutdownSound" src="{% static 'cutdown.mp3' %}" preload="auto"></audio>
+    <audio id="completeSound" src="{% static 'complete.mp3' %}" preload="auto"></audio>
+    <audio id="coinSound" src="{% static 'coin.mp3' %}" preload="auto"></audio>
+    <script src="{% static 'timer.js' %}"></script> <!-- Correct static file path -->
 </body>
 </html>
