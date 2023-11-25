@@ -163,3 +163,15 @@ main button:focus {
     margin: 0;
     padding: 0;
 }
+
+/*footer on the bottom of site*/
+footer {
+    text-align: center;
+    padding: 20px;
+    bottom: 0;
+    background-color: var(--nav-bg-color);
+    color: var(--nav-text-color);
+    width: 100%;
+    position: fixed;
+    left: 0;
+}
