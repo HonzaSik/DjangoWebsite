@@ -128,17 +128,17 @@ main button:focus {
     transition: 0.3s;
 }
 
-.loadBar_fg {
+#loadBar_fg {
     position: relative;
-    width: 5%;
+    width: 98%;
     height: 66%;
     top: 17%;
-    left: 0.8%;
+    left: 1%;
     background-color: var(--accent-color);
     border-radius: 5px;
     margin: 0;
     padding: 0;
-    transition: 0.3s;
+    transition: 1s;
 }
 
 .loadBar_bg:hover .loadBar_fg{

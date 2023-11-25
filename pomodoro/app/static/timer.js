@@ -62,13 +62,16 @@ document.addEventListener('DOMContentLoaded', function() {
     let text = "Pomodoro Timer";
     let isPaused = true;
     let pause = false;
-    let remainingTime = 4 * 2; // 25 minutes
+    let remainingTime = 25 * 60; // 25 minutes
+    let pause_length = 5 * 60; // 5 minutes
+    let pomodoro_length = 25 * 60; // 25 minutes
 
     function updateTimerDisplay() {
         const minutes = Math.floor(remainingTime / 60);
         const seconds = remainingTime % 60;
         document.getElementById('text').textContent = text;
         document.getElementById('timer').textContent = `${minutes}:${seconds.toString().padStart(2, '0')}`;
+        barWidth();
     }
 
     function startTimer() {
@@ -139,6 +142,19 @@ document.addEventListener('DOMContentLoaded', function() {
         isPaused = true;
     }
 
+    //calculates bar width based in the time in %
+    function barWidth(){
+        let bar = document.getElementById('loadBar_fg');
+        let barWidth = 0;
+        if (pause){
+            barWidth = 98-((remainingTime / pause_length) * 98);
+        }
+        else{
+            barWidth = 98 - ((remainingTime / pomodoro_length) * 98);
+        }
+        bar.style.width = barWidth + '%';
+    }
+
     function endTimer() {
         clearInterval(timer);
         remainingTime = 25 * 60; // Reset to 25 minutes
@@ -148,7 +164,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function startPause() {
         clearInterval(timer);
-        remainingTime = 20; // Reset to 5 minutes
+        remainingTime = 5 * 60; // Reset to 5 minutes
         updateTimerDisplay();
         isPaused = true;
         pause = true;
