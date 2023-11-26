@@ -58,6 +58,10 @@ function addIntervalToDatabase() {
 
 
 document.addEventListener('DOMContentLoaded', function() {
+    // Volume settings
+    let coin_volume = 0.5;
+    let start_volume = 0.5;
+    let end_volume = 0.5;
     let timer;
     let text = "Pomodoro Timer";
     let isPaused = true;
@@ -67,6 +71,9 @@ document.addEventListener('DOMContentLoaded', function() {
     let pomodoro_length = 25 * 60; // 25 minutes
 
     function updateTimerDisplay() {
+        coin_volume = (document.getElementById('coin_volume').value)/100;
+        start_volume = (document.getElementById('start_volume').value)/100;
+        end_volume = (document.getElementById('end_volume').value)/100;
         const minutes = Math.floor(remainingTime / 60);
         const seconds = remainingTime % 60;
         document.getElementById('text').textContent = text;
@@ -84,7 +91,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 updateTimerDisplay();
                 if(remainingTime === 16){
                     let cutdown = document.getElementById('cutdownSound');
-                    cutdown.volume = 0.5;
+                    cutdown.volume = end_volume;
                     cutdown.play();
                 }
             }
@@ -104,11 +111,11 @@ document.addEventListener('DOMContentLoaded', function() {
             timer = setInterval(() => {
                 if (remainingTime > 0) {
                     remainingTime--;
-                    if (remainingTime % 60 === 0){
+                    if (remainingTime % 10 === 0){
                         // Every minute, add a coin to the database
                         //play coin.mp3 sound
                         let coin = document.getElementById('coinSound');
-                        coin.volume = 0.1;
+                        coin.volume = coin_volume;
                         coin.play();
                         addCoinToDatabase();
 
@@ -121,7 +128,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     }
                     // Playing a completion sound
                     let complete = document.getElementById('completeSound');
-                    complete.volume = 0.6;
+                    complete.volume = start_volume;
                     complete.play();
 
                     // Adding an interval to the database
