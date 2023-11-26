@@ -171,14 +171,14 @@ main button:focus {
     width: 80%;
     left: 10%;
     height: 50%;
-    top: 65px;
+    top: 85px;
     font-size: 20px;
     font-weight: bold;
     color: var(--main-text-color);
     margin: 0;
     padding: 0;
     display: none;
-    border-radius: 0 0 20px 20px;
+    border-radius: 0 0 30px 30px;
 }
 
 
@@ -187,8 +187,9 @@ main button:focus {
 /*footer on the bottom of site*/
 footer {
     text-align: center;
-    padding: 20px;
+    padding: 10px;
     bottom: 0;
+    font-size: 12px;
     background-color: var(--nav-bg-color);
     color: var(--nav-text-color);
     width: 100%;
