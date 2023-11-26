@@ -9,6 +9,7 @@
 }
 
 .logo{
+    display: none;
     z-index: 1;
     position: absolute;
     -webkit-user-drag: none;
@@ -30,7 +31,6 @@ body {
     padding: 0;
     background-color: var(--primary-bg-color);
     color: var(--text-color);
-    overflow: hidden;
 }
 
 /* Navigation Bar Styles */
@@ -103,24 +103,24 @@ main button:focus {
 }
 
 /* Timer Styles */
-.timer {
-    font-size: 100px;
+#timer {
+    font-size: 50px;
     font-weight: bold;
-    color: var(--accent-color);
+    color: var(--main-text-color);
     margin: 20px 0;
 }
 
 .loadBar_container{
-    width: 100%;
-    height: 40px;
+    width: 80%;
+    height: 70px;
     background-color: #EEEEEE;
     border-radius: 5px;
-    margin: 50px 0;
+    margin: 40px 10%;
     text-align: left;
 }
 .loadBar_bg {
     width: 100%;
-    height: 100%;
+    height: 70%;
     background-color: var(--nav-bg-color);
     border-radius: 5px;
     margin: 0;
@@ -153,15 +153,12 @@ main button:focus {
 }
 
 /*text in loadbar left*/
-.loadBar_text {
-    position: relative;
-    top: -30px;
-    left: 0;
-    font-size: 20px;
-    font-weight: bold;
-    color: var(--main-text-color);
-    margin: 0;
-    padding: 0;
+#loadBar_text {
+    font-size: 18px;
+    margin-bottom: 0;
+    height: 30%;
+    width: 100%;
+    text-align: left;
 }
 
 /*more_text apears after click on StartButton*/
@@ -183,7 +180,7 @@ main button:focus {
 
 
 #settings_button {
-     margin-top: 30px;
+     margin-left: 30px;
     background-color: var(--main-text-color);
 }
 
@@ -194,8 +191,8 @@ main button:focus {
     background-color: #c5c5c5;
     width: 70%;
     left: 15%;
-    height: 80%;
-    top : 10%;
+    height: 70%;
+    top : 15%;
     bottom: 0;
     font-size: 20px;
     font-weight: bold;
@@ -219,8 +216,103 @@ main button:focus {
     cursor: pointer;
 }
 
+#settings_text_safari{
+    position: absolute;
+    width: 80%;
+    bottom : 13px;
+    left: 10%;
+    margin: 0;
+    padding: 0;
+    opacity: 0.8;
+    font-size: 13px;
+}
+
+.slider {
+    -webkit-appearance: none;
+    width: 70%;
+    height: 20px;
+    background: var(--nav-bg-color);
+    opacity: 0.8;
+    outline: none;
+    -webkit-transition: 0.2s;
+    transition: opacity 0.2s;
+    border-radius: 10px;
+}
+.slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      opacity: 1;
+      background: var(--accent-color);
+      cursor: pointer;
+}
+.slider::-moz-range-thumb {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: var(--accent-color);
+      cursor: pointer;
+}
+
+/*todo_container*/
+.todo_container {
+    display: flex;
+    flex-wrap: wrap;
+    left: 10%;
+    height: 50vh;
+    background-color: #dcdcdc;
+    border-radius: 30px;
+    margin: 50px;
+}
+
+.todo_item{
+    margin: 10px;
+    width: 220px;
+    height: 120px;
+    font-size: 15px;
+    background-color: #EEEEEE;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.todo_item_button{
+    position: relative;
+    text-align: left;
+    right: 5px;
+    top: 5px;
+    width: 30%;
+    height: 40px;
+    border-radius: 20px;
+    background-color: #bd1515;
+    border: none;
+    cursor: pointer;
+    float: right;
+}
+
+.todo_header{
+    margin-top: 10px;
+    width: 50%;
+    font-size: 25px;
+    margin-bottom: 0;
+}
+
+.todo_text{
+    margin: 10px;
+    left: 5%;
+    padding: 5px;
+    font-size: 15px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+
+
+
 /*footer on the bottom of site*/
 footer {
+    position: fixed;
     text-align: center;
     padding: 10px;
     bottom: 0;
@@ -228,7 +320,6 @@ footer {
     background-color: var(--nav-bg-color);
     color: var(--nav-text-color);
     width: 100%;
-    position: fixed;
     left: 0;
 }
 
