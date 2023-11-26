@@ -182,7 +182,42 @@ main button:focus {
 }
 
 
+#settings_button {
+     margin-top: 30px;
+    background-color: var(--main-text-color);
+}
 
+/*settins*/
+.settings_container {
+    display: none;
+    position: absolute;
+    background-color: #c5c5c5;
+    width: 70%;
+    left: 15%;
+    height: 80%;
+    top : 10%;
+    bottom: 0;
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--main-text-color);
+    margin: 0;
+    padding: 0;
+    border-radius: 30px;
+}
+
+
+#settings_button_close{
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    top : 30px;
+    right: 30px;
+    margin: 0;
+    padding: 0;
+    border-radius: 20%;
+    border: none;
+    cursor: pointer;
+}
 
 /*footer on the bottom of site*/
 footer {
@@ -195,4 +230,9 @@ footer {
     width: 100%;
     position: fixed;
     left: 0;
+}
+
+footer a {
+    color: var(--nav-text-color);
+    text-decoration: none;
 }

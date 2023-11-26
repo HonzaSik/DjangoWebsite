@@ -59,6 +59,8 @@ function addIntervalToDatabase() {
 
 document.addEventListener('DOMContentLoaded', function() {
     // Volume settings
+    let settings = document.getElementById('settings_container');
+    settings.style.display = 'none';
     let coin_volume = 0.5;
     let start_volume = 0.5;
     let end_volume = 0.5;
@@ -69,6 +71,18 @@ document.addEventListener('DOMContentLoaded', function() {
     let remainingTime = 25 * 60; // 25 minutes
     let pause_length = 5 * 60; // 5 minutes
     let pomodoro_length = 25 * 60; // 25 minutes
+
+    //setings
+    function showSettings(){
+        settings = document.getElementById('settings_container');
+        if (settings.style.display === 'none'){
+            settings.style.display = 'block';
+        }
+        else{
+            settings.style.display = 'none';
+        }
+    }
+
 
     function updateTimerDisplay() {
         coin_volume = (document.getElementById('coin_volume').value)/100;
@@ -181,6 +195,10 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('startButton').addEventListener('click', startTimer);
     document.getElementById('pauseButton').addEventListener('click', pauseTimer);
     document.getElementById('endButton').addEventListener('click', endTimer);
+    document.getElementById('settings_button').addEventListener('click', showSettings);
+    document.getElementById('settings_button_close').addEventListener('click', showSettings);
+
+
 
     // Initialize the timer display
     updateTimerDisplay();
