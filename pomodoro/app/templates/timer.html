@@ -19,17 +19,18 @@
     </nav>
 
     <main>
-        <h2 id="text">Pomodoro Timer</h2>
-    <div id="timer">25:00</div>
     <div class="loadBar_container">
-        <p id="loadBar_text">TIMER</p>
-        <div class="loadBar_bg"><div id="loadBar_fg"></div></div>
+        <div class="loadBar_bg">
+            <div id="loadBar_fg"></div>
+            <div id="timer">25:00</div>
+            <div id="text" class="timer_header">Pomodoro Timer</div>
+        </div>
     </div>
     <button id="startButton">Start</button>
     <button id="pauseButton">Pause</button>
     <button id="endButton">End</button>
-
     <button id="settings_button">Settings</button>
+
     <div class="settings_container" id="settings_container">
         <button id="settings_button_close">X</button>
         <div class="volume_container">
@@ -99,13 +100,14 @@
             <p class="todo_header">todo</p>
             <p class="todo_text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.</p>
         </div>
+        <div class="todo_item">
+            <button class="todo_item_button">99</button>
+            <p class="todo_header">todo</p>
+            <p class="todo_text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.</p>
+        </div>
     </div>
 
     </main>
-
-    <footer>
-        <p>Thanks for using. 2023 PomodoroAPP. Report issues <a href="https://github.com/HonzaSik">HERE</a>.</p>
-    </footer>
 
     <audio id="cutdownSound" src="{% static 'cutdown.mp3' %}" preload="auto"></audio>
     <audio id="completeSound" src="{% static 'complete.mp3' %}" preload="auto"></audio>

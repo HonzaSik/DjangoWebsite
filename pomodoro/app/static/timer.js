@@ -125,7 +125,7 @@ document.addEventListener('DOMContentLoaded', function() {
             timer = setInterval(() => {
                 if (remainingTime > 0) {
                     remainingTime--;
-                    if (remainingTime % 60 === 0){
+                    if (remainingTime % 6 === 0){
                         // Every minute, add a coin to the database
                         //play coin.mp3 sound
                         let coin = document.getElementById('coinSound');

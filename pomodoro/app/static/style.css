@@ -31,6 +31,7 @@ body {
     padding: 0;
     background-color: var(--primary-bg-color);
     color: var(--text-color);
+    overflow: hidden;
 }
 
 /* Navigation Bar Styles */
@@ -102,25 +103,36 @@ main button:focus {
     outline: none;
 }
 
-/* Timer Styles */
-#timer {
-    font-size: 50px;
-    font-weight: bold;
-    color: var(--main-text-color);
-    margin: 20px 0;
-}
 
 .loadBar_container{
     width: 80%;
-    height: 70px;
+    height: 50px;
     background-color: #EEEEEE;
     border-radius: 5px;
-    margin: 40px 10%;
+    margin: 20px 10%;
     text-align: left;
 }
+
+#timer{
+    text-align: right;
+    position: relative;
+    top: -25px;
+    right: 10px;
+    color: #EEEEEE;
+    font-size: 30px;
+}
+
+#text {
+    position: relative;
+    top: -55px;
+    left: 15px;
+    color: #EEEEEE;
+    font-size: 20px;
+}
+
 .loadBar_bg {
     width: 100%;
-    height: 70%;
+    height: 100%;
     background-color: var(--nav-bg-color);
     border-radius: 5px;
     margin: 0;
@@ -186,6 +198,7 @@ main button:focus {
 
 /*settins*/
 .settings_container {
+    z-index: 1;
     display: none;
     position: absolute;
     background-color: #c5c5c5;
@@ -259,12 +272,16 @@ main button:focus {
 /*todo_container*/
 .todo_container {
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
     left: 10%;
     height: 50vh;
-    background-color: #dcdcdc;
+    background-color: rgba(255, 255, 255, 0);
     border-radius: 30px;
-    margin: 50px;
+    margin: 30px 50px;
+    padding: 25px;
+    overflow: scroll;
+    overflow-x: hidden;
 }
 
 .todo_item{
@@ -272,34 +289,38 @@ main button:focus {
     width: 220px;
     height: 120px;
     font-size: 15px;
-    background-color: #EEEEEE;
+    background-color: #c5c5c5;
     border-radius: 20px;
     text-align: center;
 }
 
 .todo_item_button{
+    padding:0;
     position: relative;
-    text-align: left;
-    right: 5px;
-    top: 5px;
-    width: 30%;
+    text-align: center;
+    right: 15px;
+    top: 10px;
+    width: 50px;
     height: 40px;
     border-radius: 20px;
-    background-color: #bd1515;
+    background-color: var(--accent-color);
     border: none;
     cursor: pointer;
     float: right;
 }
 
 .todo_header{
-    margin-top: 10px;
-    width: 50%;
+    color: var(--main-text-color);
+    margin-top: 19px;
+    width: 70%;
     font-size: 25px;
     margin-bottom: 0;
+    overflow: hidden;
 }
 
 .todo_text{
-    margin: 10px;
+    color: var(--nav-bg-color);
+    margin: 4px;
     left: 5%;
     padding: 5px;
     font-size: 15px;
