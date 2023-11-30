@@ -5,3 +5,8 @@ document.querySelector('#startButton').onclick = () => {
     //show the text
     text.style.display = 'block';
 }
+//on click close button hide the text about pomodoro
+document.querySelector('#close_button').onclick = () => {
+    let text = document.querySelector('#more_text');
+    text.style.display = 'none';
+}
